@@ -1,0 +1,188 @@
+Teme:
+I.
+1. Convertiţi:
+- în baza 8 numărul 347;
+- în baza 16 numărul 2755;
+- în baza 2 numărul 20.
+2. Convertiţi în baza 10 numerele: 1000101 2, 357 8, C7A 16
+3. Efectuaţi următoarele operaţii:
+a) FA16+2316=
+b) 1101 00102 + 1110 11012=
+c) 11768-7238=
+4. Convertiţi numerele din baza 2 în baza 8 şi apoi 16:
+a) 10101010,110010
+b) 1100010,11101
+5. Convertiţi numărul 175.128510 în baza 4. ???
+
+6. Scrieţi pseudocodul pentru diverse metode de sortare ca, Heap (heap sort), Bulelor
+(buble sort), Rapidă (quick sort), Radix (radacina), etc.
+7. Considerând două numere întregi determinaţi cmmdc folosind algorimul lui Euclid.
+8. Descrieţi algoritmii pentru descompunerea unui număr în factori primi, determinarea
+tuturor numerelor prime până la un n citit etc.
+9. Considerând algoritmul de înmulţire chinezească descrieţi în pseudocod paşii necesari
+pentru a înmulţi două înumere întregi. Ştiţi şi alţi algoritmi interesanţi de înmulţire? 
+
+
+Rezolvare:
+1.  347|43|5|0
+     3 |3 |5|
+347= 533 in baza 8
+
+    2755|172|10
+       3|C  |A
+2755=AC3 in baza 16
+
+    20|10|5|2|1|0
+     0|0 |1|0|1
+20=10100 in baza 2
+
+
+
+
+2.  1000101 in baza 2=1*2^6 + 0*2^5 + 0*2^4 + 0*2^3 + 1*2^2 + 0*2 + 1*1
+                     =2^6+2^2+1
+                     =64+4+1
+                     =69 in baza 10
+    
+    357 in baza 8=3*8^2 + 5*8^1 + 7*8^0
+                 =3*64+40+56
+                 =285 in baza 10
+
+    C7A in baza 16=12*16^2 + 7*16 + 10*16^0
+                  =3072+112+10
+                  =3194 in baza 10    
+
+
+
+
+3.
+a) FA(16)+23(16)=
+~ FA=15*16 + 10
+    =250 in baza 10
+  250(10)|125|62|31|15|7|3|1|0
+    0    |1  |0 |1 |1 |1|1|1|
+
+  FA(16)=1111 1010(2)
+
+~ 23(16)=2*16 + 3*1
+        =35(10)
+  35(10)|17|8|4|2|1|0
+   1    |1 |0|0|0|0|
+
+  23(16)=0000 1100 (2)
+
+=> 1111 1010 +
+   0000 1100
+  =0000 0110
+
+0000 0110(2)=06 (16)
+
+=>FA(16)+23(16)= 06(16)
+
+
+b) 1101 0010(2) + 1110 1101(2)= 
+
+  1101 0010 +
+  1110 1101
+ =1011 1111 
+
+=>1101 0010(2) + 1110 1101(2)=1011 1111(2)
+
+
+c) 1176(8)-723(8)=
+
+~1176(8)=1*8^3 + 1*8^2 + 7*8 + 6
+       =512+64+56+6
+       =638(10)
+638(10)|319|159|79|39|19|9|4|2|1|0
+0      |1  |1  |1 |1 |1 |1|0|0|1|
+
+=>1176(8)=10 0111 1110
+
+~723(8)=7*8^2 + 2*8 + 3
+      =448+16+3
+      =467(10)
+467(10)|233|116|58|29|14|7|3|1|0
+1      |1  |0  |0 |1 |0 |1|1|1|
+
+=>723(8)=1 1101 0011(2)
+
+c1= -723(8)=0 0010 1100(2)
+c2=0 0010 1101
+
+=> 10 0111 1110 +
+   00 0010 1101
+  =10 1001 1011
+
+   =>1176(8)-723(8)= 10 1001 1011(2)
+
+
+
+4.
+(2)->(8)->(16)
+a) 10101010,110010(2)
+ 
+I)    010 101 010 110 010
+<=>   2  5   2   6   2
+
+=> 10101010,110010(2)= 25262(8)
+
+II)  0010 1010 1011 0010
+<=>    2   A     B    2
+
+=>10101010,110010(2)= 2AB2 (16)
+
+b) 1100010,11101(2)
+
+I)  110 001 011 101
+<=>  6    1  3   5
+
+=>1100010,11101(2)=6135(8)
+
+II) 1100 0101 1101
+<=>   C   5    D
+
+=> 1100010,11101(2)=C5D(16)
+
+6.
+Bulelor
+(buble sort)
+
+int n, v[100];
+//citire v[] cu n elemente
+bool sortat;
+do
+{
+  sortat = true;
+  for(int i = 0 ; i < n - 1 ; i ++)
+    if(v[i] > v[i+1])
+    {
+      int aux = v[i];
+      v[i] = v[i+1];
+      v[i+1] = aux;
+      sortat = false;
+    }
+}
+while(!sortat);
+  7.
+a=72
+ =2^3*3^2
+b=18
+ =2*3^2
+
+72-18=54
+54-18=36
+36-18=18 =>cmmdc =18
+
+
+8.
+{
+INPUT n, x[i],aux
+FOR i=0 TO n-1
+IF x[i]>x[i+1] THEN
+AUX=x[i]
+x[i]=x[i+1]
+x[i+1]=AUX
+END IF
+OUTPUT x[i]
+}
